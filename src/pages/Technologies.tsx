@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { 
-  Sparkles, Brain, Code, Database, Layers, Terminal, Shield, Cpu, 
-  TrendingUp, BarChart3, Settings, Cloud, Briefcase, CheckCircle2, 
-  Workflow, Palette, Globe, ArrowRight, Check 
+import {
+  Sparkles, Brain, Code, Database, Layers, Terminal, Shield, Cpu,
+  TrendingUp, BarChart3, Settings, Cloud, Briefcase, CheckCircle2,
+  Workflow, Palette, Globe, ArrowRight, Check
 } from 'lucide-react';
 import { parsedContent } from '../utils/content';
 import { DotPattern } from '../components/ui/Patterns';
@@ -64,7 +64,7 @@ export function Technologies() {
           align="center"
           className="mb-16"
         />
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {allTech.map((tech, idx) => {
             const IconComp = getTechIcon(tech.name);
@@ -97,7 +97,6 @@ export function Technologies() {
                   </p>
 
                   <div className="mt-auto pt-4 border-t border-border-default flex items-center justify-between text-xs">
-                    <span className="text-body/60 font-medium">Pipeline Status</span>
                     <div className="flex items-center gap-1.5 text-success font-semibold">
                       <span className="relative flex h-2 w-2">
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75"></span>

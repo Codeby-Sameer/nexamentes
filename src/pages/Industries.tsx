@@ -1,12 +1,22 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { 
-  DollarSign, Activity, Code, ShoppingBag, Settings, 
-  Cloud, Shield, Wifi, Truck, Zap, ArrowRight 
+import {
+  DollarSign, Activity, Code, ShoppingBag, Settings,
+  Cloud, Shield, Wifi, Truck, Zap, ArrowRight
 } from 'lucide-react';
 import { parsedContent } from '../utils/contentParser';
 import { DotPattern } from '../components/ui/Patterns';
 import { SectionTitle } from '../components/ui/SectionTitle';
+import bfsiImg from '../assets/industries/bfsi.jpg';
+import healthcareImg from '../assets/industries/healthcare.jpg';
+import itImg from '../assets/industries/it.jpg';
+import retailImg from '../assets/industries/retail.jpg';
+import manufacturingImg from '../assets/industries/manufacturing.jpg';
+import cloudImg from '../assets/industries/cloud.jpg';
+import cybersecurityImg from '../assets/industries/cybersecurity.jpg';
+import telecomImg from '../assets/industries/telecom.jpg';
+import logisticsImg from '../assets/industries/logistics.jpg';
+import energyImg from '../assets/industries/energy.jpg';
 
 // Map ids to appropriate Lucide icons
 const iconMap: Record<number, any> = {
@@ -22,18 +32,18 @@ const iconMap: Record<number, any> = {
   10: Zap
 };
 
-// Map ids to high-resolution Unsplash images
+// Map ids to high-resolution local images
 const imageMap: Record<number, string> = {
-  1: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=600&auto=format&fit=crop', // BFSI
-  2: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=600&auto=format&fit=crop', // Healthcare
-  3: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop', // IT
-  4: 'https://images.unsplash.com/photo-1563013544-824ae1d704d3?q=80&w=600&auto=format&fit=crop', // Retail
-  5: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=600&auto=format&fit=crop', // Manufacturing
-  6: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600&auto=format&fit=crop', // Cloud
-  7: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600&auto=format&fit=crop', // Cybersecurity
-  8: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=600&auto=format&fit=crop', // Telecom
-  9: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=600&auto=format&fit=crop', // Logistics
-  10: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=600&auto=format&fit=crop' // Energy
+  1: bfsiImg,
+  2: healthcareImg,
+  3: itImg,
+  4: retailImg,
+  5: manufacturingImg,
+  6: cloudImg,
+  7: cybersecurityImg,
+  8: telecomImg,
+  9: logisticsImg,
+  10: energyImg
 };
 
 export function Industries() {
@@ -78,10 +88,9 @@ export function Industries() {
                   <img
                     src={imageUrl}
                     alt={ind.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 "
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
-                  
+
                   {/* Floating Icon */}
                   <div className="absolute bottom-4 left-6 w-10 h-10 rounded-xl bg-background border border-border-default flex items-center justify-center text-primary shadow-lg z-10">
                     <IconComp className="w-5 h-5" />
@@ -96,7 +105,7 @@ export function Industries() {
                   <p className="text-xs text-body leading-relaxed flex-grow">
                     {ind.description}
                   </p>
-                  
+
                   <div className="border-t border-border-default pt-4 mt-2 flex items-center justify-between">
                     <Link
                       to="/contact"

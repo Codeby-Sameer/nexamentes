@@ -28,17 +28,26 @@ import fidelityLogo from '../assets/clientlogo/fidelity.jpeg';
 import hondaLogo from '../assets/clientlogo/Honda-Logo.wine.svg';
 import capitalOneLogo from '../assets/clientlogo/Capital_One_logo.svg.png';
 import fiservLogo from '../assets/clientlogo/Fiserv-Logo.wine.svg';
+import charlesSchwabLogo from '../assets/clientlogo/Charles_SchwabLogo.wine.svg';
+import costcoLogo from '../assets/clientlogo/Costco-Logo.wine.svg';
+import deltaLogo from '../assets/clientlogo/DeltaAirLines-Logo.wine.svg';
+import googleLogo from '../assets/clientlogo/Google-Logo.wine.svg';
+import microsoftLogo from '../assets/clientlogo/Microsoft-Logo.wine.svg';
+import morganStanleyLogo from '../assets/clientlogo/Morgan_Stanley.svg';
+import stateStreetLogo from '../assets/clientlogo/State_Street.svg';
+import tMobileLogo from '../assets/clientlogo/T-MobileLogo.wine.svg';
+import verizonLogo from '../assets/clientlogo/VerizonLogo.wine.svg';
 
 const clients = [
-  { name: 'Walmart', logo: walmartLogo },
-  { name: 'Edwards LifeSciences', logo: edwardsLogo },
-  { name: 'ADM ( Archer Daniels Midland)', logo: admLogo },
-  { name: 'Centific', logo: centificLogo },
-  { name: 'Unied Health Group', logo: uniedHealthLogo },
-  { name: 'Wipro', logo: wiproLogo },
-  { name: 'CVS Health', logo: cvsHealthLogo },
-  { name: 'UBS', logo: ubsLogo },
-  // { name: 'TCH', logo: tchLogo },
+  { name: 'Charles Schwab', logo: charlesSchwabLogo },
+  { name: 'Costco', logo: costcoLogo },
+  { name: 'Delta Air Lines', logo: deltaLogo },
+  { name: 'Google', logo: googleLogo },
+  { name: 'Microsoft', logo: microsoftLogo },
+  { name: 'Morgan Stanley', logo: morganStanleyLogo },
+  { name: 'State Street', logo: stateStreetLogo },
+  { name: 'T-Mobile', logo: tMobileLogo },
+  { name: 'Verizon', logo: verizonLogo },
   { name: 'Toyota', logo: toyotaLogo },
   { name: 'Virtusa', logo: virtusaLogo },
   { name: 'JPMC', logo: jpmcLogo },
@@ -48,7 +57,14 @@ const clients = [
   { name: 'Tech M', logo: techMLogo },
   { name: 'Accenture', logo: accentureLogo },
   { name: 'CreditOne', logo: creditOneLogo },
-  // { name: 'BCBS', logo: bcbsLogo },
+  { name: 'Walmart', logo: walmartLogo },
+  { name: 'Edwards LifeSciences', logo: edwardsLogo },
+  { name: 'ADM ( Archer Daniels Midland)', logo: admLogo },
+  { name: 'Centific', logo: centificLogo },
+  { name: 'Unied Health Group', logo: uniedHealthLogo },
+  { name: 'Wipro', logo: wiproLogo },
+  { name: 'CVS Health', logo: cvsHealthLogo },
+  { name: 'UBS', logo: ubsLogo },
   { name: 'CTS', logo: ctsLogo },
   { name: 'IBM', logo: ibmLogo },
   { name: 'Oncor', logo: oncorLogo },
@@ -136,7 +152,7 @@ export default function TrustStrip() {
                   <motion.div
                     key={`${item.name}-${slideIndex}-${itemIndex}`}
                     whileHover={{ scale: 1.05 }}
-                    className="flex-1 aspect-[3/2] bg-card border border-border-default rounded-card p-1 md:p-4 flex items-center justify-center hover:border-primary/30 transition-all duration-300 cursor-pointer min-w-24 md:min-w-32 shadow-sm"
+                    className="flex-1 aspect-[3/2]   p-1 md:p-4 flex items-center justify-center  transition-all duration-300 cursor-pointer min-w-24 md:min-w-32"
                   >
                     <img
                       src={item.logo}

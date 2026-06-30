@@ -10,23 +10,123 @@ import { GlowCard } from '../components/ui/GlowCard';
 import { AnimatedBackground } from '../components/ui/AnimatedBackground';
 import TrustStrip from '@/components/TrustStrip';
 
+interface AccordionItemType {
+  id: number;
+  title: string;
+  imageUrl: string;
+}
+
+const accordionItems: AccordionItemType[] = [
+  {
+    id: 1,
+    title: 'Voice Assistant',
+    imageUrl: 'https://images.unsplash.com/photo-1628258334105-2a0b3d6efee1?q=80&w=1974&auto=format&fit=crop',
+  },
+  {
+    id: 2,
+    title: 'AI Image Generation',
+    imageUrl: 'https://images.unsplash.com/photo-1677756119517-756a188d2d94?q=80&w=2070&auto=format&fit=crop',
+  },
+  {
+    id: 3,
+    title: 'AI Chatbot + Local RAG',
+    imageUrl: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1974&auto=format&fit=crop',
+  },
+  {
+    id: 4,
+    title: 'AI Agent',
+    imageUrl: 'https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=2090&auto=format&fit=crop',
+  },
+  {
+    id: 5,
+    title: 'Visual Understanding',
+    imageUrl: 'https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?q=80&w=2070&auto=format&fit=crop',
+  },
+];
+
+interface AccordionItemProps {
+  item: AccordionItemType;
+  isActive: boolean;
+  onMouseEnter: () => void;
+}
+
+const AccordionItem = ({ item, isActive, onMouseEnter }: AccordionItemProps) => {
+  return (
+    <div
+      className={`
+        relative h-[320px] sm:h-[380px] md:h-[450px] rounded-2xl overflow-hidden cursor-pointer
+        transition-all duration-700 ease-in-out flex-shrink-0
+        ${isActive ? 'w-[220px] sm:w-[320px] md:w-[400px]' : 'w-[50px] sm:w-[60px]'}
+      `}
+      onMouseEnter={onMouseEnter}
+    >
+      {/* Background Image */}
+      <img
+        src={item.imageUrl}
+        alt={item.title}
+        className="absolute inset-0 w-full h-full object-cover"
+        onError={(e) => {
+          const target = e.target as HTMLImageElement;
+          target.onerror = null;
+          target.src = 'https://placehold.co/400x450/2d3748/ffffff?text=Image+Error';
+        }}
+      />
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/40"></div>
+
+      {/* Caption Text */}
+      <span
+        className={`
+          absolute text-white text-sm sm:text-base md:text-lg font-semibold whitespace-nowrap
+          transition-all duration-300 ease-in-out
+          ${isActive
+            ? 'bottom-6 left-1/2 -translate-x-1/2 rotate-0' // Active state: horizontal, bottom-center
+            // Inactive state: vertical, positioned at the bottom, for all screen sizes
+            : 'w-auto text-left bottom-24 left-1/2 -translate-x-1/2 rotate-90'
+          }
+        `}
+      >
+        {item.title}
+      </span>
+    </div>
+  );
+};
+
+const heroSlides = [
+  {
+    title: "Fueling Digital Growth with Exceptional IT Talent.",
+    description: "Nexamentes bridges the gap between top-tier technical expertise and forward-thinking enterprises with premium IT staffing."
+  },
+  {
+    title: "Discover your next career adventure! Shape the future with Nexamentes",
+    description: "Join a workplace that values creativity, collaboration, and cutting-edge tech."
+  },
+  {
+    title: "Turning Hiring Challenges into Growth Opportunities.",
+    description: "Transforming workforce deployment and recruitment velocity to scale enterprise capabilities on demand."
+  },
+  {
+    title: "Empowering Organizations Through Strategic Talent.",
+    description: "We provide custom staffing and workforce process outsourcing designed to transform hiring velocity and quality."
+  },
+  {
+    title: "Accelerate Gen-AI Tasks on Any Device",
+    description: "Build high-performance AI apps on-device without the hassle of model compression or edge deployment."
+  }
+];
+
 export function Home() {
-  const [headlineIndex, setHeadlineIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(4);
+  const [isPaused, setIsPaused] = useState(false);
 
-  const heroImages = [
-    "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600&auto=format&fit=crop", // Fueling Digital Growth
-    "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop", // Discover career adventure
-    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop", // Turning hiring challenges
-    "https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=600&auto=format&fit=crop"  // Empowering Organizations
-  ];
-
-  // Rotate through content headlines every 4 seconds
+  // Auto rotate accordion items and corresponding titles every 5 seconds
   useEffect(() => {
-    const timer = setInterval(() => {
-      setHeadlineIndex((prev) => (prev + 1) % parsedContent.headlines.length);
-    }, 4500);
-    return () => clearInterval(timer);
-  }, []);
+    if (isPaused) return;
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % accordionItems.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [isPaused]);
 
   const stats = [
     { label: 'Specialists Placed', value: 1250, suffix: '+' },
@@ -46,11 +146,13 @@ export function Home() {
       <DotPattern className="opacity-90" />
 
       {/* --- HERO SECTION --- */}
-      <section className="relative min-h-[90vh] flex items-center justify-center pt-20 pb-8 overflow-hidden px-6 bg-hero-secondary text-white">
+      <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-28 pb-16 overflow-hidden px-6 bg-hero-secondary text-white">
         <AnimatedBackground />
         <GridPattern className="opacity-10 text-white/10" />
         <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-          <div className="lg:col-span-7 flex flex-col gap-6 text-left">
+
+          {/* Left Side: Text Content */}
+          <div className="lg:col-span-6 flex flex-col gap-6 text-left">
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
@@ -61,35 +163,31 @@ export function Home() {
               AI-Augmented Talent Solutions
             </motion.div>
 
-            {/* Rotating Hero Title */}
-            <div className="h-[140px] sm:h-[100px] lg:h-[160px] relative overflow-hidden">
+            {/* Rotating Hero Title & Description */}
+            <div className="relative min-h-[220px] sm:min-h-[160px] md:min-h-[180px] lg:min-h-[200px]">
               <AnimatePresence mode="wait">
-                <motion.h1
-                  key={headlineIndex}
-                  initial={{ opacity: 0, y: 30 }}
+                <motion.div
+                  key={activeIndex}
+                  initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -30 }}
-                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                  className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-white font-sans absolute inset-0"
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                  className="absolute inset-0 flex flex-col gap-4"
                 >
-                  {parsedContent.headlines[headlineIndex]}
-                </motion.h1>
+                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] text-white font-sans">
+                    {heroSlides[activeIndex]?.title}
+                  </h1>
+                  <p className="text-sm sm:text-base text-blue-100/90 leading-relaxed max-w-xl">
+                    {heroSlides[activeIndex]?.description}
+                  </p>
+                </motion.div>
               </AnimatePresence>
             </div>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-base sm:text-lg text-blue-100/90 leading-relaxed max-w-xl"
-            >
-              Nexamentes bridges the gap between top-tier technical expertise and forward-thinking enterprises. We deliver custom staffing and workforce process outsourcing designed to transform hiring velocity and quality.
-            </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-wrap gap-4 mt-2"
             >
               <Link
@@ -107,56 +205,27 @@ export function Home() {
             </motion.div>
           </div>
 
-          {/* Interactive visual on right */}
-          <div className="lg:col-span-5 relative flex items-center justify-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative w-full aspect-square max-w-[400px] rounded-3xl overflow-hidden glass-dark flex items-center justify-center shadow-2xl animate-float-slow group"
-            >
-              <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-white/5 opacity-10 group-hover:opacity-20 transition-opacity z-10 pointer-events-none" />
-
-              <AnimatePresence mode="wait">
-                <motion.img
-                  key={headlineIndex}
-                  src={heroImages[headlineIndex]}
-                  alt="AI Staffing and Enterprise Technology solutions"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 0.6, y: 0 }}
-                  exit={{ opacity: 0, y: -30 }}
-                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                  className="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700"
+          {/* Right Side: Image Accordion */}
+          <div
+            className="lg:col-span-6 w-full flex items-center justify-center"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+            <div className="flex flex-row items-center justify-center gap-3 sm:gap-4 overflow-x-auto p-4 w-full">
+              {accordionItems.map((item, index) => (
+                <AccordionItem
+                  key={item.id}
+                  item={item}
+                  isActive={index === activeIndex}
+                  onMouseEnter={() => setActiveIndex(index)}
                 />
-              </AnimatePresence>
-
-              {/* Dynamic Overlay Cards */}
-              <div className="absolute -bottom-6 -left-6 glass-dark px-5 py-3 rounded-card shadow-xl flex items-center gap-3 animate-float-fast z-20">
-                <Brain className="w-5 h-5 text-accent" />
-                <div className="text-left">
-                  <p className="text-[10px] text-white/60 uppercase tracking-widest font-semibold">AI Matcher</p>
-                  <p className="text-xs font-bold text-white">98.4% Match Rate</p>
-                </div>
-              </div>
-
-              <div className="absolute -top-6 -right-6 glass-dark px-5 py-3 rounded-card shadow-xl flex items-center gap-3 animate-float-slow z-20">
-                <Users className="w-5 h-5 text-accent" />
-                <div className="text-left">
-                  <p className="text-[10px] text-white/60 uppercase tracking-widest font-semibold">Talent Pool</p>
-                  <p className="text-xs font-bold text-white">10k+ Vetted Engineers</p>
-                </div>
-              </div>
-            </motion.div>
+              ))}
+            </div>
           </div>
         </div>
-      </section>
 
-      {/* --- MARQUEE TRUSTED BY --- */}
-      <TrustStrip />
-
-      {/* --- STATS SECTION --- */}
-      <section className="py-20 px-6 relative">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Stats Row inside Hero Section */}
+        <div className="max-w-7xl mx-auto w-full grid grid-cols-2 lg:grid-cols-4 gap-6 mt-16 relative z-10">
           {stats.map((stat, idx) => (
             <motion.div
               key={idx}
@@ -164,19 +233,22 @@ export function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="flex flex-col items-center justify-center p-6 rounded-card glass-premium text-center group hover:border-primary/30 transition-colors"
+              className="flex flex-col items-center justify-center p-6 rounded-card bg-white/5 border border-white/10 text-center group hover:bg-white/10 hover:border-white/20 transition-all duration-300 shadow-lg"
             >
-              <span className="text-4xl md:text-5xl font-extrabold text-primary flex items-center justify-center font-sans tracking-tight">
+              <span className="text-4xl md:text-5xl font-extrabold text-white flex items-center justify-center font-sans tracking-tight">
                 <NumberTicker value={stat.value} />
                 <span>{stat.suffix}</span>
               </span>
-              <span className="text-xs sm:text-sm text-body/80 mt-2 font-medium tracking-wide">
+              <span className="text-xs sm:text-sm text-blue-100/70 mt-2 font-medium tracking-wide">
                 {stat.label}
               </span>
             </motion.div>
           ))}
         </div>
       </section>
+
+      {/* --- MARQUEE TRUSTED BY --- */}
+      <TrustStrip />
 
       {/* --- ABOUT PREVIEW --- */}
       <section className="py-24 px-6 relative">
@@ -192,9 +264,8 @@ export function Home() {
               <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop"
                 alt="Nexamentes team collaboration"
-                className="w-full h-full object-cover opacity-80"
+                className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
             </motion.div>
           </div>
 
