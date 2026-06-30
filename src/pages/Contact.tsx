@@ -108,7 +108,7 @@ export function Contact() {
                 <div>
                   <p className="text-xs text-body/60 uppercase tracking-widest font-semibold">Headquarters</p>
                   <span className="text-sm font-semibold text-heading">
-                    320 Decker Dr, Suite 131, Irving, TX, 75062.
+                    4320 N BELTLINE RD, SUITE A225 IRVING, TX 75038.
                   </span>
                 </div>
               </div>
