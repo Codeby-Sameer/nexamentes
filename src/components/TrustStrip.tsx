@@ -106,22 +106,19 @@ export default function TrustStrip() {
   }, [isHovered, slides.length]);
 
   return (
-    <section className="w-full py-8 border-y border-white/5 overflow-hidden relative">
-      <div className=" mx-auto px-6 mb-6 relative z-20">
-
-        <p className="text-center  text-xs md:text-sm font-semibold text-slate-900 uppercase tracking-widest">
+    <section className="w-full py-12 bg-card border-y border-border-default overflow-hidden relative">
+      <div className="mx-auto px-6 mb-6 relative z-20">
+        <p className="text-center text-xs md:text-sm font-semibold text-heading uppercase tracking-widest">
           Trust Credentials & Client Portfolio
         </p>
-
       </div>
 
       <div
-        className=" mx-auto relative z-20"
+        className="mx-auto relative z-20"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         <div className="overflow-hidden w-full relative">
-
           {/* Slider Row */}
           <div
             className="flex"
@@ -139,7 +136,7 @@ export default function TrustStrip() {
                   <motion.div
                     key={`${item.name}-${slideIndex}-${itemIndex}`}
                     whileHover={{ scale: 1.05 }}
-                    className="flex-1 aspect-[3/2] bg-white p-1 md:p-4 flex items-center justify-center  hover:border-brand-blue/30 transition-all duration-300 cursor-pointer min-w-24 md:min-w-32"
+                    className="flex-1 aspect-[3/2] bg-card border border-border-default rounded-card p-1 md:p-4 flex items-center justify-center hover:border-primary/30 transition-all duration-300 cursor-pointer min-w-24 md:min-w-32 shadow-sm"
                   >
                     <img
                       src={item.logo}
@@ -160,8 +157,8 @@ export default function TrustStrip() {
               key={index}
               onClick={() => setCurrentSlide(index)}
               className={`h-2.5 rounded-full transition-all duration-500 ${currentSlide === index
-                ? 'bg-blue-400 w-7 shadow-md shadow-blue-400/30'
-                : 'bg-slate-700 hover:bg-slate-500 w-2.5'
+                ? 'bg-primary w-7 shadow-sm'
+                : 'bg-body/20 hover:bg-body/40 w-2.5'
                 }`}
               aria-label={`Go to slide ${index + 1}`}
             />

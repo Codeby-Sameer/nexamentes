@@ -42,15 +42,15 @@ export function Industries() {
       <DotPattern className="opacity-25" />
 
       {/* --- HERO SECTION --- */}
-      <section className="py-16 px-6 text-center">
-        <div className="max-w-4xl mx-auto flex flex-col items-center gap-6">
-          <span className="px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-widest bg-gradient-to-r from-secondary/15 to-accent/15 border border-secondary/20 text-secondary">
+      <section className="py-16 px-6 text-center bg-hero-secondary text-white">
+        <div className="max-w-4xl mx-auto glass-dark p-8 md:p-12 rounded-3xl flex flex-col items-center gap-6 shadow-2xl">
+          <span className="px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-widest bg-white/10 border border-white/20 text-white">
             OUR REACH
           </span>
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gradient-primary font-sans leading-[1.1]">
+          <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white font-sans leading-[1.1]">
             Industries We Serve
           </h1>
-          <p className="text-base md:text-lg text-foreground/60 leading-relaxed max-w-2xl">
+          <p className="text-base md:text-lg text-white/80 leading-relaxed max-w-2xl">
             Delivering niche technological talent equipped with sector-specific knowledge and compliance familiarity.
           </p>
         </div>
@@ -71,7 +71,7 @@ export function Industries() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.5, delay: (idx % 3) * 0.1 }}
-                className="group relative flex flex-col rounded-3xl border border-white/5 bg-muted/20 hover:border-secondary/30 transition-all duration-500 overflow-hidden shadow-xl"
+                className="group relative flex flex-col rounded-3xl border border-border-default bg-card hover:border-primary/30 transition-all duration-500 overflow-hidden shadow-xl"
               >
                 {/* Image Header with Gradient Overlay */}
                 <div className="h-48 relative overflow-hidden">
@@ -80,27 +80,27 @@ export function Industries() {
                     alt={ind.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-muted/95 via-muted/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
                   
                   {/* Floating Icon */}
-                  <div className="absolute bottom-4 left-6 w-10 h-10 rounded-xl bg-background border border-white/10 flex items-center justify-center text-secondary shadow-lg z-10">
+                  <div className="absolute bottom-4 left-6 w-10 h-10 rounded-xl bg-background border border-border-default flex items-center justify-center text-primary shadow-lg z-10">
                     <IconComp className="w-5 h-5" />
                   </div>
                 </div>
 
                 {/* Card Content */}
                 <div className="p-6 flex-grow flex flex-col gap-3 text-left">
-                  <h3 className="text-lg font-bold font-sans text-foreground">
+                  <h3 className="text-lg font-bold font-sans text-heading">
                     {ind.title}
                   </h3>
-                  <p className="text-xs text-foreground/60 leading-relaxed flex-grow">
+                  <p className="text-xs text-body leading-relaxed flex-grow">
                     {ind.description}
                   </p>
                   
-                  <div className="border-t border-white/5 pt-4 mt-2 flex items-center justify-between">
+                  <div className="border-t border-border-default pt-4 mt-2 flex items-center justify-between">
                     <Link
                       to="/contact"
-                      className="text-xs text-secondary hover:text-white font-semibold flex items-center gap-1 group/btn"
+                      className="text-xs text-primary hover:text-primary font-semibold flex items-center gap-1 group/btn"
                     >
                       Inquire Sector Staffing <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5" />
                     </Link>
@@ -113,7 +113,7 @@ export function Industries() {
       </section>
 
       {/* --- BOTTOM CALL TO ACTION --- */}
-      <section className="py-24 px-6 border-t border-white/5 relative">
+      <section className="py-24 px-6 border-t border-border-default relative">
         <div className="max-w-4xl mx-auto text-center">
           <SectionTitle
             title="Need Domain-Specific Technical Experts?"

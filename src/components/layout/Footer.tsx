@@ -15,11 +15,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative bg-muted border-t border-white/5 pt-14 pb-10 overflow-hidden">
-      {/* Background Glows */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-radial from-secondary/5 to-transparent blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-radial from-accent/5 to-transparent blur-3xl pointer-events-none" />
-
+    <footer className="relative bg-surface border-t border-border-default pt-14 pb-10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-10">
           {/* Brand Column */}
@@ -30,9 +26,8 @@ export function Footer() {
                 alt="Nexamentes Logo"
                 className="h-24 w-auto object-contain"
               />
-
             </Link>
-            <p className="text-sm text-foreground/60 leading-relaxed max-w-sm">
+            <p className="text-sm text-body leading-relaxed max-w-sm">
               Connecting forward-thinking organizations with world-class technology talent, powered by AI-driven staffing intelligence and recruitment process outsourcing.
             </p>
             <div className="flex items-center gap-4">
@@ -40,7 +35,7 @@ export function Footer() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-foreground/60 hover:text-secondary hover:border-secondary transition-all"
+                className="w-8 h-8 rounded-full border border-border-default flex items-center justify-center text-body/60 hover:text-primary hover:border-primary transition-all"
                 aria-label="LinkedIn Profile"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -51,7 +46,7 @@ export function Footer() {
                 href="https://x.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-foreground/60 hover:text-secondary hover:border-secondary transition-all"
+                className="w-8 h-8 rounded-full border border-border-default flex items-center justify-center text-body/60 hover:text-primary hover:border-primary transition-all"
                 aria-label="Twitter Profile"
               >
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
@@ -62,7 +57,7 @@ export function Footer() {
                 href="https://github.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-foreground/60 hover:text-secondary hover:border-secondary transition-all"
+                className="w-8 h-8 rounded-full border border-border-default flex items-center justify-center text-body/60 hover:text-primary hover:border-primary transition-all"
                 aria-label="GitHub Profile"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -74,30 +69,30 @@ export function Footer() {
 
           {/* Quick Links Column */}
           <div className="flex flex-col gap-4">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">Quick Links</h4>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-heading">Quick Links</h4>
             <ul className="flex flex-col gap-2.5">
               <li>
-                <Link to="/" className="text-sm text-foreground/60 hover:text-secondary transition-colors">
+                <Link to="/" className="text-sm text-body hover:text-primary transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-sm text-foreground/60 hover:text-secondary transition-colors">
+                <Link to="/about" className="text-sm text-body hover:text-primary transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-sm text-foreground/60 hover:text-secondary transition-colors">
+                <Link to="/contact" className="text-sm text-body hover:text-primary transition-colors">
                   Contact Us
                 </Link>
               </li>
               <li>
-                <Link to="/technologies" className="text-sm text-foreground/60 hover:text-secondary transition-colors">
+                <Link to="/technologies" className="text-sm text-body hover:text-primary transition-colors">
                   Technologies
                 </Link>
               </li>
               <li>
-                <Link to="/careers" className="text-sm text-foreground/60 hover:text-secondary transition-colors">
+                <Link to="/careers" className="text-sm text-body hover:text-primary transition-colors">
                   Careers
                 </Link>
               </li>
@@ -106,13 +101,13 @@ export function Footer() {
 
           {/* Services Column */}
           <div className="flex flex-col gap-4">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">Services</h4>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-heading">Services</h4>
             <ul className="flex flex-col gap-2.5">
               {parsedContent.services.slice(0, 4).map((service) => (
                 <li key={service.id}>
                   <Link
                     to={`/services#service-${service.id}`}
-                    className="text-sm text-foreground/60 hover:text-secondary transition-colors"
+                    className="text-sm text-body hover:text-primary transition-colors"
                   >
                     {service.title}
                   </Link>
@@ -123,8 +118,8 @@ export function Footer() {
 
           {/* Newsletter Column */}
           <div className="flex flex-col gap-4">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">Stay Connected</h4>
-            <p className="text-sm text-foreground/60 leading-relaxed">
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-heading">Stay Connected</h4>
+            <p className="text-sm text-body leading-relaxed">
               Subscribe to receive insights, tech updates, and talent strategy resources.
             </p>
             <form onSubmit={handleNewsletterSubmit} className="flex flex-col gap-2">
@@ -133,11 +128,11 @@ export function Footer() {
                   type="email"
                   required
                   placeholder="Enter your email"
-                  className="w-full bg-background border border-white/10 rounded-xl py-3 pl-4 pr-12 text-sm text-foreground focus:outline-none focus:border-secondary transition-all"
+                  className="input-field py-3 pl-4 pr-12 text-sm"
                 />
                 <button
                   type="submit"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-lg bg-secondary text-white flex items-center justify-center hover:bg-opacity-95 hover:scale-105 transition-all cursor-pointer"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-lg bg-primary text-primary-contrast flex items-center justify-center hover:bg-secondary hover:scale-105 transition-all cursor-pointer"
                   aria-label="Submit Newsletter"
                 >
                   <ArrowRight className="w-4 h-4" />
@@ -148,15 +143,15 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-foreground/40">
+        <div className="border-t border-border-default pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-body/60">
             &copy; {new Date().getFullYear()} Nexamentes. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <Link to="/privacy-policy" className="text-xs text-foreground/40 hover:text-foreground transition-colors">
+            <Link to="/privacy-policy" className="text-xs text-body/60 hover:text-heading transition-colors">
               Privacy Policy
             </Link>
-            <Link to="/terms-conditions" className="text-xs text-foreground/40 hover:text-foreground transition-colors">
+            <Link to="/terms-conditions" className="text-xs text-body/60 hover:text-heading transition-colors">
               Terms & Conditions
             </Link>
           </div>

@@ -20,11 +20,11 @@ export function WhatsAppWidget() {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-12 h-12 bg-emerald-500 hover:bg-emerald-600 rounded-full flex items-center justify-center text-white shadow-[0_0_20px_rgba(16,185,129,0.4)] hover:shadow-[0_0_25px_rgba(16,185,129,0.6)] hover:scale-105 transition-all duration-300 relative border border-emerald-400/20"
+        className="w-12 h-12 bg-success hover:opacity-90 rounded-full flex items-center justify-center text-primary-contrast shadow-lg hover:scale-105 transition-all duration-300 relative border border-success/20"
         aria-label="Contact Nexamentes via WhatsApp"
       >
         {/* Pulsing ring background */}
-        <span className="absolute inset-0 rounded-full bg-emerald-500 animate-ping opacity-35 group-hover:opacity-50 pointer-events-none" />
+        <span className="absolute inset-0 rounded-full bg-success animate-ping opacity-35 group-hover:opacity-50 pointer-events-none" />
 
         {/* WhatsApp SVG Icon */}
         <svg

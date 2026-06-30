@@ -43,12 +43,12 @@ export function Careers() {
       <DotPattern className="opacity-30" />
 
       {/* --- HERO SECTION --- */}
-      <section className="py-20 px-6 relative overflow-hidden text-center">
-        <div className="max-w-4xl mx-auto flex flex-col items-center gap-6 relative z-10">
+      <section className="py-20 px-6 relative overflow-hidden text-center bg-hero-secondary text-white">
+        <div className="max-w-4xl mx-auto glass-dark p-8 md:p-12 rounded-3xl flex flex-col items-center gap-6 relative z-10 shadow-2xl">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-widest bg-gradient-to-r from-secondary/15 to-accent/15 border border-secondary/20 text-secondary"
+            className="px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-widest bg-white/10 border border-white/20 text-white"
           >
             CAREER DEVELOPMENT
           </motion.span>
@@ -56,7 +56,7 @@ export function Careers() {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-6xl font-extrabold tracking-tight text-gradient-primary font-sans leading-[1.1]"
+            className="text-3xl md:text-5xl font-extrabold tracking-tight text-white font-sans leading-[1.1]"
           >
             Nexa Career Programs
           </motion.h1>
@@ -64,7 +64,7 @@ export function Careers() {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-base md:text-lg text-foreground/60 leading-relaxed max-w-2xl"
+            className="text-base md:text-lg text-white/80 leading-relaxed max-w-2xl"
           >
             Accelerate your professional growth in recruitment, staffing operations, and talent sourcing with our structured specialist programs.
           </motion.p>
@@ -85,32 +85,32 @@ export function Careers() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
               >
-                <GlowCard className="flex flex-col h-full gap-6 text-left relative overflow-hidden group hover:border-secondary/35 transition-all duration-300">
+                <GlowCard className="flex flex-col h-full gap-6 text-left relative overflow-hidden group hover:border-primary/35 transition-all duration-300">
                   {/* Icon and Title */}
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-secondary/15 flex items-center justify-center text-secondary border border-secondary/25 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary border border-primary/20 group-hover:scale-110 transition-transform duration-300">
                       <IconComponent className="w-6 h-6" />
                     </div>
                     <div className="flex-1">
-                      <span className="text-[10px] text-foreground/40 font-bold uppercase tracking-widest">Program 0{program.id}</span>
-                      <h3 className="text-xl font-bold font-sans text-foreground leading-snug group-hover:text-secondary transition-colors duration-300">{program.title}</h3>
+                      <span className="text-[10px] text-body/60 font-bold uppercase tracking-widest">Program 0{program.id}</span>
+                      <h3 className="text-xl font-bold font-sans text-heading leading-snug group-hover:text-primary transition-colors duration-300">{program.title}</h3>
                     </div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-sm text-foreground/60 leading-relaxed min-h-[3rem]">
+                  <p className="text-sm text-body leading-relaxed min-h-[3rem]">
                     {program.description}
                   </p>
 
                   {/* Benefits */}
-                  <div className="flex flex-col gap-3 border-t border-white/5 pt-4 mt-auto">
-                    <span className="text-[10px] font-bold text-secondary uppercase tracking-wider block">
+                  <div className="flex flex-col gap-3 border-t border-border-default pt-4 mt-auto">
+                    <span className="text-[10px] font-bold text-primary uppercase tracking-wider block">
                       Program Benefits
                     </span>
                     <div className="flex flex-col gap-2">
                       {program.benefits.map((benefit, benefitIdx) => (
-                        <div key={benefitIdx} className="flex gap-2 items-start text-xs text-foreground/80 leading-normal">
-                          <Check className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
+                        <div key={benefitIdx} className="flex gap-2 items-start text-xs text-body leading-normal">
+                          <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                           <span>{benefit}</span>
                         </div>
                       ))}
@@ -124,14 +124,14 @@ export function Careers() {
       </section>
 
       {/* --- CALL TO ACTION --- */}
-      <section className="py-24 px-6 relative border-t border-white/5">
-        <div className="max-w-5xl mx-auto glass-premium rounded-3xl p-10 md:p-16 border border-white/10 text-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(14,165,233,0.1),transparent_70%)] pointer-events-none" />
+      <section className="py-24 px-6 relative border-t border-border-default">
+        <div className="max-w-5xl mx-auto glass-premium rounded-3xl p-10 md:p-16 text-center relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,color-mix(in srgb,var(--primary)10%,transparent),transparent_70%)] pointer-events-none" />
 
           <h3 className="text-3xl md:text-4xl font-extrabold text-gradient-primary font-sans mb-4">
             Begin Your Career Transformation
           </h3>
-          <p className="text-sm sm:text-base text-foreground/60 max-w-xl mx-auto mb-8">
+          <p className="text-sm sm:text-base text-body max-w-xl mx-auto mb-8">
             Connect with our program coordinators to learn more about enrollment schedules, curriculum paths, and placement opportunities.
           </p>
           <div className="flex justify-center gap-4 flex-wrap">

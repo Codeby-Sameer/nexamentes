@@ -25,7 +25,7 @@ export function SectionTitle({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.5 }}
-          className="px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-widest bg-gradient-to-r from-secondary/15 to-accent/15 border border-secondary/20 text-secondary w-max"
+          className="px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-widest bg-primary/10 border border-primary/20 text-primary w-max"
         >
           {badge}
         </motion.span>
@@ -36,7 +36,7 @@ export function SectionTitle({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-100px' }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="text-3xl md:text-5xl font-extrabold tracking-tight text-foreground font-sans leading-[1.1] text-gradient-primary"
+        className="text-3xl md:text-5xl font-extrabold tracking-tight text-gradient-primary font-sans leading-[1.1]"
       >
         {title}
       </motion.h2>
@@ -47,7 +47,7 @@ export function SectionTitle({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-base md:text-lg text-foreground/60 leading-relaxed font-normal"
+          className="text-base md:text-lg text-body leading-relaxed font-normal"
         >
           {subtitle}
         </motion.p>

@@ -41,15 +41,15 @@ export function Technologies() {
       <DotPattern className="opacity-25" />
 
       {/* --- HERO SECTION --- */}
-      <section className="py-20 px-6 text-center">
-        <div className="max-w-4xl mx-auto flex flex-col items-center gap-6">
-          <span className="px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-widest bg-gradient-to-r from-secondary/15 to-accent/15 border border-secondary/20 text-secondary">
+      <section className="py-20 px-6 text-center bg-hero-secondary text-white">
+        <div className="max-w-4xl mx-auto glass-dark p-8 md:p-12 rounded-3xl flex flex-col items-center gap-6 shadow-2xl">
+          <span className="px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-widest bg-white/10 border border-white/20 text-white">
             TECHNOLOGY VERTICALS
           </span>
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gradient-primary font-sans leading-[1.1]">
+          <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white font-sans leading-[1.1]">
             Tech Domains We Supply
           </h1>
-          <p className="text-base md:text-lg text-foreground/60 leading-relaxed max-w-2xl">
+          <p className="text-base md:text-lg text-white/80 leading-relaxed max-w-2xl">
             Vetted engineering talent across core software stacks, platform configuration, and predictive analysis.
           </p>
         </div>
@@ -77,31 +77,31 @@ export function Technologies() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: (idx % 3) * 0.1 }}
               >
-                <GlowCard className="flex flex-col h-full gap-5 text-left relative overflow-hidden group hover:border-secondary/35 transition-all duration-300">
+                <GlowCard className="flex flex-col h-full gap-5 text-left relative overflow-hidden group hover:border-primary/35 transition-all duration-300">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-secondary/15 flex items-center justify-center text-secondary border border-secondary/25 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary border border-primary/20 group-hover:scale-110 transition-transform duration-300">
                       <IconComp className="w-6 h-6" />
                     </div>
                     <div className="flex-1">
-                      <span className="text-[10px] text-foreground/40 font-bold uppercase tracking-widest">
+                      <span className="text-[10px] text-body/60 font-bold uppercase tracking-widest">
                         Domain {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                       </span>
-                      <h3 className="text-lg font-bold font-sans text-foreground leading-snug group-hover:text-secondary transition-colors duration-300">
+                      <h3 className="text-lg font-bold font-sans text-heading leading-snug group-hover:text-primary transition-colors duration-300">
                         {tech.name}
                       </h3>
                     </div>
                   </div>
 
-                  <p className="text-sm text-foreground/60 leading-relaxed mt-2 min-h-[4.5rem]">
+                  <p className="text-sm text-body leading-relaxed mt-2 min-h-[4.5rem]">
                     {tech.description}
                   </p>
 
-                  <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between text-xs">
-                    <span className="text-foreground/40 font-medium">Pipeline Status</span>
-                    <div className="flex items-center gap-1.5 text-emerald-400 font-semibold">
+                  <div className="mt-auto pt-4 border-t border-border-default flex items-center justify-between text-xs">
+                    <span className="text-body/60 font-medium">Pipeline Status</span>
+                    <div className="flex items-center gap-1.5 text-success font-semibold">
                       <span className="relative flex h-2 w-2">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-success"></span>
                       </span>
                       <span>Active</span>
                     </div>
@@ -114,7 +114,7 @@ export function Technologies() {
       </section>
 
       {/* --- CALL TO ACTION --- */}
-      <section className="py-24 px-6 border-t border-white/5 relative">
+      <section className="py-24 px-6 border-t border-border-default relative">
         <div className="max-w-4xl mx-auto text-center">
           <SectionTitle
             title="Accelerate Your Sprints With Vetted Developers"

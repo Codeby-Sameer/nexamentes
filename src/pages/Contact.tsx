@@ -43,15 +43,15 @@ export function Contact() {
       <DotPattern className="opacity-25" />
 
       {/* --- HERO SECTION --- */}
-      <section className="py-16 px-6 text-center">
-        <div className="max-w-4xl mx-auto flex flex-col items-center gap-6">
-          <span className="px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-widest bg-gradient-to-r from-secondary/15 to-accent/15 border border-secondary/20 text-secondary">
+      <section className="py-16 px-6 text-center bg-hero-secondary text-white">
+        <div className="max-w-4xl mx-auto glass-dark p-8 md:p-12 rounded-3xl flex flex-col items-center gap-6 shadow-2xl">
+          <span className="px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-widest bg-white/10 border border-white/20 text-white">
             CONNECT WITH US
           </span>
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gradient-primary font-sans leading-[1.1]">
+          <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white font-sans leading-[1.1]">
             Get In Touch
           </h1>
-          <p className="text-base md:text-lg text-foreground/60 leading-relaxed max-w-2xl">
+          <p className="text-base md:text-lg text-white/80 leading-relaxed max-w-2xl">
             Let’s start a conversation. Tell us your hiring requirements or talent goals, and our specialists will assist you.
           </p>
         </div>
@@ -64,13 +64,13 @@ export function Contact() {
           {/* LEFT: COMPANY INFORMATION */}
           <div className="lg:col-span-5 flex flex-col gap-10 text-left">
             <div className="flex flex-col gap-4">
-              <span className="text-secondary font-bold text-xs uppercase tracking-widest flex items-center gap-1.5">
+              <span className="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1.5">
                 <Sparkles className="w-4 h-4" /> Nexamentes Hub
               </span>
-              <h2 className="text-3xl font-extrabold font-sans text-foreground">
+              <h2 className="text-3xl font-extrabold font-sans text-heading">
                 {contactInfo?.title || 'Connect with Our Talent Experts'}
               </h2>
-              <p className="text-sm text-foreground/60 leading-relaxed">
+              <p className="text-sm text-body leading-relaxed">
                 {contactInfo?.description || 'Looking for skilled IT professionals or reliable staffing support? Our team is ready to assist you with fast, flexible, and AI-enabled hiring solutions.'}
               </p>
             </div>
@@ -78,36 +78,36 @@ export function Contact() {
             {/* Direct Channels */}
             <div className="flex flex-col gap-6">
               <div className="flex gap-4 items-center">
-                <div className="w-12 h-12 rounded-xl bg-secondary/10 text-secondary border border-secondary/20 flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary border border-primary/20 flex items-center justify-center flex-shrink-0">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs text-foreground/45 uppercase tracking-widest font-semibold">Email Us</p>
-                  <a href="mailto:info@nexamentes.com" className="text-sm font-semibold text-foreground hover:text-secondary transition-colors">
+                  <p className="text-xs text-body/60 uppercase tracking-widest font-semibold">Email Us</p>
+                  <a href="mailto:info@nexamentes.com" className="text-sm font-semibold text-heading hover:text-primary transition-colors">
                     info@nexamentes.com
                   </a>
                 </div>
               </div>
 
               <div className="flex gap-4 items-center">
-                <div className="w-12 h-12 rounded-xl bg-secondary/10 text-secondary border border-secondary/20 flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary border border-primary/20 flex items-center justify-center flex-shrink-0">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs text-foreground/45 uppercase tracking-widest font-semibold">Call Us</p>
-                  <a href="tel:+18005553145" className="text-sm font-semibold text-foreground hover:text-secondary transition-colors">
+                  <p className="text-xs text-body/60 uppercase tracking-widest font-semibold">Call Us</p>
+                  <a href="tel:+18005553145" className="text-sm font-semibold text-heading hover:text-primary transition-colors">
                     +1 (800) 555-3145
                   </a>
                 </div>
               </div>
 
               <div className="flex gap-4 items-center">
-                <div className="w-12 h-12 rounded-xl bg-secondary/10 text-secondary border border-secondary/20 flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary border border-primary/20 flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs text-foreground/45 uppercase tracking-widest font-semibold">Headquarters</p>
-                  <span className="text-sm font-semibold text-foreground">
+                  <p className="text-xs text-body/60 uppercase tracking-widest font-semibold">Headquarters</p>
+                  <span className="text-sm font-semibold text-heading">
                     100 Pine Street, San Francisco, CA 94111
                   </span>
                 </div>
@@ -115,29 +115,29 @@ export function Contact() {
             </div>
 
             {/* Google Maps Placeholder */}
-            <div className="w-full h-44 rounded-2xl bg-muted/30 border border-white/5 relative overflow-hidden flex items-center justify-center">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(14,165,233,0.08),transparent_70%)]" />
+            <div className="w-full h-44 rounded-2xl bg-card border border-border-default relative overflow-hidden flex items-center justify-center">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,color-mix(in srgb,var(--primary)8%,transparent),transparent_70%)]" />
               <div className="text-center relative z-10 flex flex-col items-center gap-2">
-                <MapPin className="w-8 h-8 text-secondary animate-bounce" />
-                <span className="text-xs font-semibold text-foreground/50 uppercase tracking-widest">San Francisco, CA</span>
-                <span className="text-[10px] text-foreground/30">Google Maps Satellite API Sandbox</span>
+                <MapPin className="w-8 h-8 text-primary animate-bounce" />
+                <span className="text-xs font-semibold text-body/85 uppercase tracking-widest">San Francisco, CA</span>
+                <span className="text-[10px] text-body/40">Google Maps Satellite API Sandbox</span>
               </div>
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center gap-4 border-t border-white/5 pt-6">
-              <span className="text-xs text-foreground/40 font-medium mr-2">Follow Us:</span>
-              <a href="#" className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-foreground/60 hover:text-secondary hover:border-secondary transition-all" aria-label="LinkedIn Profile">
+            <div className="flex items-center gap-4 border-t border-border-default pt-6">
+              <span className="text-xs text-body/50 font-medium mr-2">Follow Us:</span>
+              <a href="#" className="w-9 h-9 rounded-full border border-border-default flex items-center justify-center text-body/60 hover:text-primary hover:border-primary transition-all" aria-label="LinkedIn Profile">
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                 </svg>
               </a>
-              <a href="#" className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-foreground/60 hover:text-secondary hover:border-secondary transition-all" aria-label="Twitter Profile">
+              <a href="#" className="w-9 h-9 rounded-full border border-border-default flex items-center justify-center text-body/60 hover:text-primary hover:border-primary transition-all" aria-label="Twitter Profile">
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
               </a>
-              <a href="#" className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-foreground/60 hover:text-secondary hover:border-secondary transition-all" aria-label="GitHub Profile">
+              <a href="#" className="w-9 h-9 rounded-full border border-border-default flex items-center justify-center text-body/60 hover:text-primary hover:border-primary transition-all" aria-label="GitHub Profile">
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                 </svg>
@@ -147,7 +147,7 @@ export function Contact() {
 
           {/* RIGHT: CONTACT FORM */}
           <div className="lg:col-span-7 w-full">
-            <div className="glass-premium p-8 md:p-10 rounded-3xl border border-white/10 shadow-2xl relative overflow-hidden">
+            <div className="glass-premium p-8 md:p-10 rounded-3xl shadow-2xl relative overflow-hidden">
               
               <AnimatePresence mode="wait">
                 {!isSubmitted ? (
@@ -163,7 +163,7 @@ export function Contact() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       {/* Name */}
                       <div className="flex flex-col gap-2">
-                        <label htmlFor="name" className="text-xs font-semibold text-foreground/75 tracking-wide">
+                        <label htmlFor="name" className="text-xs font-semibold text-body/90 tracking-wide">
                           Full Name
                         </label>
                         <input
@@ -172,16 +172,16 @@ export function Contact() {
                           required
                           placeholder="e.g. John Doe"
                           {...register('name', { required: 'Name is required' })}
-                          className={`w-full bg-background border rounded-xl py-3 px-4 text-sm text-foreground focus:outline-none focus:border-secondary transition-all ${
-                            errors.name ? 'border-red-500/50 focus:border-red-500' : 'border-white/10'
+                          className={`w-full bg-background border border-border-default rounded-xl py-3 px-4 text-sm text-heading focus:outline-none focus:border-primary transition-all ${
+                            errors.name ? 'border-destructive/50 focus:border-destructive' : 'border-border-default'
                           }`}
                         />
-                        {errors.name && <span className="text-[10px] text-red-400 font-semibold">{errors.name.message}</span>}
+                        {errors.name && <span className="text-[10px] text-destructive font-semibold">{errors.name.message}</span>}
                       </div>
 
                       {/* Email */}
                       <div className="flex flex-col gap-2">
-                        <label htmlFor="email" className="text-xs font-semibold text-foreground/75 tracking-wide">
+                        <label htmlFor="email" className="text-xs font-semibold text-body/90 tracking-wide">
                           Email Address
                         </label>
                         <input
@@ -193,18 +193,18 @@ export function Contact() {
                             required: 'Email is required',
                             pattern: { value: /^\S+@\S+$/i, message: 'Invalid email address' },
                           })}
-                          className={`w-full bg-background border rounded-xl py-3 px-4 text-sm text-foreground focus:outline-none focus:border-secondary transition-all ${
-                            errors.email ? 'border-red-500/50 focus:border-red-500' : 'border-white/10'
+                          className={`w-full bg-background border border-border-default rounded-xl py-3 px-4 text-sm text-heading focus:outline-none focus:border-primary transition-all ${
+                            errors.email ? 'border-destructive/50 focus:border-destructive' : 'border-border-default'
                           }`}
                         />
-                        {errors.email && <span className="text-[10px] text-red-400 font-semibold">{errors.email.message}</span>}
+                        {errors.email && <span className="text-[10px] text-destructive font-semibold">{errors.email.message}</span>}
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       {/* Phone */}
                       <div className="flex flex-col gap-2">
-                        <label htmlFor="phone" className="text-xs font-semibold text-foreground/75 tracking-wide">
+                        <label htmlFor="phone" className="text-xs font-semibold text-body/90 tracking-wide">
                           Phone Number
                         </label>
                         <input
@@ -213,26 +213,26 @@ export function Contact() {
                           required
                           placeholder="e.g. +1 (555) 019-2834"
                           {...register('phone', { required: 'Phone is required' })}
-                          className={`w-full bg-background border rounded-xl py-3 px-4 text-sm text-foreground focus:outline-none focus:border-secondary transition-all ${
-                            errors.phone ? 'border-red-500/50 focus:border-red-500' : 'border-white/10'
+                          className={`w-full bg-background border border-border-default rounded-xl py-3 px-4 text-sm text-heading focus:outline-none focus:border-primary transition-all ${
+                            errors.phone ? 'border-destructive/50 focus:border-destructive' : 'border-border-default'
                           }`}
                         />
-                        {errors.phone && <span className="text-[10px] text-red-400 font-semibold">{errors.phone.message}</span>}
+                        {errors.phone && <span className="text-[10px] text-destructive font-semibold">{errors.phone.message}</span>}
                       </div>
 
                       {/* Company */}
                       <div className="flex flex-col gap-2">
-                        <label htmlFor="company" className="text-xs font-semibold text-foreground/75 tracking-wide flex items-center gap-1">
-                          Company <span className="text-foreground/35 font-normal">(Optional)</span>
+                        <label htmlFor="company" className="text-xs font-semibold text-body/90 tracking-wide flex items-center gap-1">
+                          Company <span className="text-body/60 font-normal">(Optional)</span>
                         </label>
                         <div className="relative">
-                          <Building className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-foreground/30" />
+                          <Building className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-body/40" />
                           <input
                             id="company"
                             type="text"
                             placeholder="e.g. Acme Tech Inc"
                             {...register('company')}
-                            className="w-full bg-background border border-white/10 rounded-xl py-3 pl-10 pr-4 text-sm text-foreground focus:outline-none focus:border-secondary transition-all"
+                            className="w-full bg-background border border-border-default rounded-xl py-3 pl-10 pr-4 text-sm text-heading focus:outline-none focus:border-primary transition-all"
                           />
                         </div>
                       </div>
@@ -240,7 +240,7 @@ export function Contact() {
 
                     {/* Message */}
                     <div className="flex flex-col gap-2">
-                      <label htmlFor="message" className="text-xs font-semibold text-foreground/75 tracking-wide">
+                      <label htmlFor="message" className="text-xs font-semibold text-body/90 tracking-wide">
                         Your Message / Hiring Brief
                       </label>
                       <textarea
@@ -249,22 +249,22 @@ export function Contact() {
                         required
                         placeholder="Detail your technology requirements, project timeline or desired developer background..."
                         {...register('message', { required: 'Message is required' })}
-                        className={`w-full bg-background border rounded-xl py-3 px-4 text-sm text-foreground focus:outline-none focus:border-secondary transition-all resize-none ${
-                          errors.message ? 'border-red-500/50 focus:border-red-500' : 'border-white/10'
+                        className={`w-full bg-background border border-border-default rounded-xl py-3 px-4 text-sm text-heading focus:outline-none focus:border-primary transition-all resize-none ${
+                          errors.message ? 'border-destructive/50 focus:border-destructive' : 'border-border-default'
                         }`}
                       />
-                      {errors.message && <span className="text-[10px] text-red-400 font-semibold">{errors.message.message}</span>}
+                      {errors.message && <span className="text-[10px] text-destructive font-semibold">{errors.message.message}</span>}
                     </div>
 
                     {/* Submit Button */}
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full btn-primary py-4 rounded-xl font-semibold flex items-center justify-center gap-2 cursor-pointer shadow-lg hover:shadow-secondary/25 transition-all text-sm mt-2 disabled:opacity-70 disabled:pointer-events-none"
+                      className="w-full btn-primary py-4 rounded-xl font-semibold flex items-center justify-center gap-2 cursor-pointer shadow-lg hover:shadow-primary/25 transition-all text-sm mt-2 disabled:opacity-70 disabled:pointer-events-none"
                     >
                       {isSubmitting ? (
                         <>
-                          <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                          <div className="w-5 h-5 border-2 border-current border-t-transparent rounded-full animate-spin" />
                           Submitting...
                         </>
                       ) : (
@@ -283,10 +283,10 @@ export function Contact() {
                     transition={{ duration: 0.3 }}
                     className="flex flex-col items-center justify-center py-12 px-4 text-center gap-6"
                   >
-                    <CheckCircle2 className="w-16 h-16 text-secondary animate-pulse" />
+                    <CheckCircle2 className="w-16 h-16 text-primary animate-pulse" />
                     <div>
-                      <h3 className="text-2xl font-extrabold text-foreground font-sans">Message Dispatched!</h3>
-                      <p className="text-sm text-foreground/60 leading-relaxed max-w-sm mt-2">
+                      <h3 className="text-2xl font-extrabold text-heading font-sans">Message Dispatched!</h3>
+                      <p className="text-sm text-body leading-relaxed max-w-sm mt-2">
                         We have logged your requirements and will allocate a client manager to email you inside 12-24 business hours.
                       </p>
                     </div>

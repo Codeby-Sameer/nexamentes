@@ -53,7 +53,7 @@ export function Navbar() {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `relative text-sm font-medium transition-colors hover:text-secondary ${isActive ? 'text-secondary' : 'text-foreground/80'
+              `relative text-sm font-medium transition-colors hover:text-primary ${isActive ? 'text-primary' : 'text-body/90'
               }`
             }
           >
@@ -63,7 +63,7 @@ export function Navbar() {
                 {isActive && (
                   <motion.span
                     layoutId="navbar-underline"
-                    className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-secondary"
+                    className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-primary"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -74,7 +74,7 @@ export function Navbar() {
           <NavLink
             to="/about"
             className={({ isActive }) =>
-              `relative text-sm font-medium transition-colors hover:text-secondary ${isActive ? 'text-secondary' : 'text-foreground/80'
+              `relative text-sm font-medium transition-colors hover:text-primary ${isActive ? 'text-primary' : 'text-body/90'
               }`
             }
           >
@@ -84,7 +84,7 @@ export function Navbar() {
                 {isActive && (
                   <motion.span
                     layoutId="navbar-underline"
-                    className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-secondary"
+                    className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-primary"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -96,9 +96,9 @@ export function Navbar() {
           <div className="relative">
             <button
               onClick={() => setActiveMegaMenu(activeMegaMenu === 'solutions' ? null : 'solutions')}
-              className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-secondary cursor-pointer ${activeMegaMenu === 'solutions' || location.pathname.startsWith('/services') || location.pathname.startsWith('/industries')
-                ? 'text-secondary'
-                : 'text-foreground/80'
+              className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary cursor-pointer ${activeMegaMenu === 'solutions' || location.pathname.startsWith('/services') || location.pathname.startsWith('/industries')
+                ? 'text-primary'
+                : 'text-body/90'
                 }`}
             >
               Solutions
@@ -121,27 +121,27 @@ export function Navbar() {
                     transition={{ duration: 0.2 }}
                     className="absolute left-0 top-full pt-4 w-56 z-50"
                   >
-                    <div className="bg-white rounded-2xl p-4 shadow-2xl border border-slate-200 flex flex-col gap-2">
+                    <div className="bg-card rounded-card p-4 shadow-navbar border border-border-default flex flex-col gap-2">
                       <Link
                         to="/services"
                         onClick={() => setActiveMegaMenu(null)}
-                        className="group flex items-center justify-between rounded-xl px-4 py-3 hover:bg-slate-50 transition-colors text-left"
+                        className="group flex items-center justify-between rounded-card px-4 py-3 hover:bg-surface transition-colors text-left"
                       >
-                        <span className="text-sm font-semibold text-slate-900 group-hover:text-secondary transition-colors">
+                        <span className="text-sm font-semibold text-heading group-hover:text-primary transition-colors">
                           Our Services
                         </span>
-                        <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-secondary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                        <ArrowUpRight className="w-4 h-4 text-body/40 group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                       </Link>
 
                       <Link
                         to="/industries"
                         onClick={() => setActiveMegaMenu(null)}
-                        className="group flex items-center justify-between rounded-xl px-4 py-3 hover:bg-slate-50 transition-colors text-left"
+                        className="group flex items-center justify-between rounded-card px-4 py-3 hover:bg-surface transition-colors text-left"
                       >
-                        <span className="text-sm font-semibold text-slate-900 group-hover:text-secondary transition-colors">
+                        <span className="text-sm font-semibold text-heading group-hover:text-primary transition-colors">
                           Industries We Serve
                         </span>
-                        <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-secondary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                        <ArrowUpRight className="w-4 h-4 text-body/40 group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                       </Link>
                     </div>
                   </motion.div>
@@ -153,7 +153,7 @@ export function Navbar() {
           <NavLink
             to="/technologies"
             className={({ isActive }) =>
-              `relative text-sm font-medium transition-colors hover:text-secondary ${isActive ? 'text-secondary' : 'text-foreground/80'
+              `relative text-sm font-medium transition-colors hover:text-primary ${isActive ? 'text-primary' : 'text-body/90'
               }`
             }
           >
@@ -163,7 +163,7 @@ export function Navbar() {
                 {isActive && (
                   <motion.span
                     layoutId="navbar-underline"
-                    className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-secondary"
+                    className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-primary"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -174,7 +174,7 @@ export function Navbar() {
           <NavLink
             to="/careers"
             className={({ isActive }) =>
-              `relative text-sm font-medium transition-colors hover:text-secondary ${isActive ? 'text-secondary' : 'text-foreground/80'
+              `relative text-sm font-medium transition-colors hover:text-primary ${isActive ? 'text-primary' : 'text-body/90'
               }`
             }
           >
@@ -184,7 +184,7 @@ export function Navbar() {
                 {isActive && (
                   <motion.span
                     layoutId="navbar-underline"
-                    className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-secondary"
+                    className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-primary"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -197,7 +197,7 @@ export function Navbar() {
         <div className="hidden lg:block">
           <Link
             to="/contact"
-            className="px-5 py-2.5 rounded-full text-xs font-semibold text-white flex items-center gap-1 btn-cta-glow cursor-pointer"
+            className="btn-gradient px-5 py-2 text-xs flex items-center gap-1.5"
           >
             Get Staffed <ArrowRight className="w-4 h-4" />
           </Link>
@@ -206,7 +206,7 @@ export function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="lg:hidden p-2 text-foreground/80 hover:text-foreground cursor-pointer"
+          className="lg:hidden p-2 text-body hover:text-heading cursor-pointer"
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
@@ -220,13 +220,13 @@ export function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden absolute top-full left-0 right-0 glass-premium shadow-2xl border-t border-white/5 overflow-hidden"
+            className="lg:hidden absolute top-full left-0 right-0 glass-premium shadow-navbar border-t border-border-default overflow-hidden"
           >
             <div className="px-6 py-8 flex flex-col gap-6">
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  `text-base font-semibold transition-colors ${isActive ? 'text-secondary' : 'text-foreground/85'}`
+                  `text-base font-semibold transition-colors ${isActive ? 'text-primary' : 'text-body'}`
                 }
               >
                 Home
@@ -234,7 +234,7 @@ export function Navbar() {
               <NavLink
                 to="/about"
                 className={({ isActive }) =>
-                  `text-base font-semibold transition-colors ${isActive ? 'text-secondary' : 'text-foreground/85'}`
+                  `text-base font-semibold transition-colors ${isActive ? 'text-primary' : 'text-body'}`
                 }
               >
                 About Us
@@ -242,7 +242,7 @@ export function Navbar() {
               <NavLink
                 to="/services"
                 className={({ isActive }) =>
-                  `text-base font-semibold transition-colors ${isActive ? 'text-secondary' : 'text-foreground/85'}`
+                  `text-base font-semibold transition-colors ${isActive ? 'text-primary' : 'text-body'}`
                 }
               >
                 Services
@@ -250,7 +250,7 @@ export function Navbar() {
               <NavLink
                 to="/industries"
                 className={({ isActive }) =>
-                  `text-base font-semibold transition-colors ${isActive ? 'text-secondary' : 'text-foreground/85'}`
+                  `text-base font-semibold transition-colors ${isActive ? 'text-primary' : 'text-body'}`
                 }
               >
                 Industries
@@ -258,7 +258,7 @@ export function Navbar() {
               <NavLink
                 to="/technologies"
                 className={({ isActive }) =>
-                  `text-base font-semibold transition-colors ${isActive ? 'text-secondary' : 'text-foreground/85'}`
+                  `text-base font-semibold transition-colors ${isActive ? 'text-primary' : 'text-body'}`
                 }
               >
                 Technologies
@@ -266,7 +266,7 @@ export function Navbar() {
               <NavLink
                 to="/careers"
                 className={({ isActive }) =>
-                  `text-base font-semibold transition-colors ${isActive ? 'text-secondary' : 'text-foreground/85'}`
+                  `text-base font-semibold transition-colors ${isActive ? 'text-primary' : 'text-body'}`
                 }
               >
                 Careers
@@ -274,7 +274,7 @@ export function Navbar() {
 
               <Link
                 to="/contact"
-                className="w-full text-center px-6 py-3 rounded-xl text-white font-semibold flex items-center justify-center gap-2 mt-4 btn-cta-glow cursor-pointer"
+                className="w-full btn-gradient py-3 text-sm flex items-center justify-center gap-2 mt-4"
               >
                 Get Staffed <ArrowRight className="w-4 h-4" />
               </Link>
