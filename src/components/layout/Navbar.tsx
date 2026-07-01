@@ -33,13 +33,13 @@ export function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-        ? 'py-4 glass-premium shadow-lg shadow-black/20'
-        : 'py-4 bg-transparent border-b border-transparent'
+        ? 'py-2 glass-premium shadow-lg shadow-black/20'
+        : 'py-2 bg-transparent border-b border-transparent'
         }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 group">
+        <Link to="/" className="flex items-center gapx-3 py-2 group">
           <img
             src="/nexamentes.png"
             alt="Nexamentes Logo"
@@ -53,51 +53,26 @@ export function Navbar() {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `relative text-sm font-medium transition-colors hover:text-primary ${isActive ? 'text-primary' : 'text-body/90'
+              `relative text-sm font-medium transition-colors hover:text-white hover:bg-blue-600 px-3 py-2 rounded-full ${isActive ? 'text-white bg-blue-600 px-3 py-2 rounded-full' : 'text-body/90'
               }`
             }
           >
             {({ isActive }) => (
               <>
                 Home
-                {isActive && (
-                  <motion.span
-                    layoutId="navbar-underline"
-                    className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-primary"
-                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                  />
-                )}
+
               </>
             )}
           </NavLink>
 
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              `relative text-sm font-medium transition-colors hover:text-primary ${isActive ? 'text-primary' : 'text-body/90'
-              }`
-            }
-          >
-            {({ isActive }) => (
-              <>
-                About Us
-                {isActive && (
-                  <motion.span
-                    layoutId="navbar-underline"
-                    className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-primary"
-                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                  />
-                )}
-              </>
-            )}
-          </NavLink>
+
 
           {/* Solutions Dropdown Trigger */}
           <div className="relative">
             <button
               onClick={() => setActiveMegaMenu(activeMegaMenu === 'solutions' ? null : 'solutions')}
-              className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary cursor-pointer ${activeMegaMenu === 'solutions' || location.pathname.startsWith('/services') || location.pathname.startsWith('/industries')
-                ? 'text-primary'
+              className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-white hover:bg-blue-600 px-3 py-2 rounded-full cursor-pointer ${activeMegaMenu === 'solutions' || location.pathname.startsWith('/services') || location.pathname.startsWith('/industries')
+                ? 'text-white bg-blue-600 px-3 py-2 rounded-full'
                 : 'text-body/90'
                 }`}
             >
@@ -153,20 +128,14 @@ export function Navbar() {
           <NavLink
             to="/technologies"
             className={({ isActive }) =>
-              `relative text-sm font-medium transition-colors hover:text-primary ${isActive ? 'text-primary' : 'text-body/90'
+              `relative text-sm font-medium transition-colors hover:text-white hover:bg-blue-600 px-3 py-2 rounded-full ${isActive ? 'text-white bg-blue-600 px-3 py-2 rounded-full' : 'text-body/90'
               }`
             }
           >
             {({ isActive }) => (
               <>
                 Technologies
-                {isActive && (
-                  <motion.span
-                    layoutId="navbar-underline"
-                    className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-primary"
-                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                  />
-                )}
+
               </>
             )}
           </NavLink>
@@ -174,20 +143,28 @@ export function Navbar() {
           <NavLink
             to="/careers"
             className={({ isActive }) =>
-              `relative text-sm font-medium transition-colors hover:text-primary ${isActive ? 'text-primary' : 'text-body/90'
+              `relative text-sm font-medium transition-colors hover:text-white hover:bg-blue-600 px-3 py-2 rounded-full ${isActive ? 'text-white bg-blue-600 px-3 py-2 rounded-full' : 'text-body/90'
               }`
             }
           >
             {({ isActive }) => (
               <>
                 Careers
-                {isActive && (
-                  <motion.span
-                    layoutId="navbar-underline"
-                    className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-primary"
-                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                  />
-                )}
+
+              </>
+            )}
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              `relative text-sm font-medium transition-colors hover:text-white hover:bg-blue-600 px-3 py-2 rounded-full ${isActive ? 'text-white bg-blue-600 px-3 py-2 rounded-full' : 'text-body/90'
+              }`
+            }
+          >
+            {({ isActive }) => (
+              <>
+                About Us
+
               </>
             )}
           </NavLink>
@@ -206,7 +183,7 @@ export function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="lg:hidden p-2 text-body hover:text-heading cursor-pointer"
+          className="lg:hidden px-3 py-2 text-body hover:text-heading cursor-pointer"
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
@@ -220,7 +197,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden absolute top-full left-0 right-0 glass-premium shadow-navbar border-t border-border-default overflow-hidden"
+            className="lg:hidden absolute top-24 bg-white left-0 right-0 shadow-navbar border-t border-border-default overflow-hidden"
           >
             <div className="px-6 py-8 flex flex-col gap-6">
               <NavLink
@@ -274,7 +251,7 @@ export function Navbar() {
 
               <Link
                 to="/contact"
-                className="w-full btn-gradient py-3 text-sm flex items-center justify-center gap-2 mt-4"
+                className="w-full btn-gradient py-3 text-sm flex items-center justify-center gapx-3 py-2 mt-4"
               >
                 Get Staffed <ArrowRight className="w-4 h-4" />
               </Link>

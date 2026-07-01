@@ -10,6 +10,14 @@ import { GlowCard } from '../components/ui/GlowCard';
 import { AnimatedBackground } from '../components/ui/AnimatedBackground';
 import TrustStrip from '@/components/TrustStrip';
 
+import im1 from '@/assets/im1.jpeg';
+import im2 from '@/assets/im2.jpeg';
+import im3 from '@/assets/im3.jpeg';
+import im4 from '@/assets/im4.jpeg';
+import im5 from '@/assets/im5.jpeg';
+import im6 from '@/assets/im6.jpeg';
+import im7 from '@/assets/im7.jpeg';
+
 interface AccordionItemType {
   id: number;
   title: string;
@@ -19,30 +27,31 @@ interface AccordionItemType {
 const accordionItems: AccordionItemType[] = [
   {
     id: 1,
-    title: 'Voice Assistant',
-    imageUrl: 'https://images.unsplash.com/photo-1628258334105-2a0b3d6efee1?q=80&w=1974&auto=format&fit=crop',
+    title: 'AI & Generative AI Staffing',
+    imageUrl: im1,
   },
   {
     id: 2,
-    title: 'AI Image Generation',
-    imageUrl: 'https://images.unsplash.com/photo-1677756119517-756a188d2d94?q=80&w=2070&auto=format&fit=crop',
+    title: 'Staffing Solutions',
+    imageUrl: im2,
   },
   {
     id: 3,
-    title: 'AI Chatbot + Local RAG',
-    imageUrl: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1974&auto=format&fit=crop',
+    title: 'Recruitment Process Outsourcing (RPO)',
+    imageUrl: im3,
   },
   {
     id: 4,
-    title: 'AI Agent',
-    imageUrl: 'https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=2090&auto=format&fit=crop',
+    title: 'Managed Project Staffing',
+    imageUrl: im4,
   },
   {
     id: 5,
-    title: 'Visual Understanding',
-    imageUrl: 'https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?q=80&w=2070&auto=format&fit=crop',
+    title: 'Remote Workforce Solutions',
+    imageUrl: im5,
   },
 ];
+
 
 interface AccordionItemProps {
   item: AccordionItemType;
@@ -72,7 +81,7 @@ const AccordionItem = ({ item, isActive, onMouseEnter }: AccordionItemProps) => 
         }}
       />
       {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/40"></div>
+      <div className="absolute inset-0 bg-black/20"></div>
 
       {/* Caption Text */}
       <span
@@ -131,7 +140,7 @@ export function Home() {
   const stats = [
     { label: 'Specialists Placed', value: 1250, suffix: '+' },
     { label: 'Client Retention Rate', value: 98, suffix: '%' },
-    { label: 'Average Time to Fill', value: 24, suffix: 'h' },
+
     { label: 'Skill Verticals Covered', value: 15, suffix: '+' },
   ];
 
@@ -148,7 +157,7 @@ export function Home() {
       {/* --- HERO SECTION --- */}
       <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-28 pb-16 overflow-hidden px-6 bg-hero-secondary text-white">
         <AnimatedBackground />
-        <GridPattern className="opacity-10 text-white/10" />
+        <GridPattern className="opacity-40 text-white/10" />
         <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
 
           {/* Left Side: Text Content */}
@@ -225,7 +234,7 @@ export function Home() {
         </div>
 
         {/* Stats Row inside Hero Section */}
-        <div className="max-w-7xl mx-auto w-full grid grid-cols-2 lg:grid-cols-4 gap-6 mt-16 relative z-10">
+        <div className="max-w-7xl mx-auto w-full grid grid-cols-2 lg:grid-cols-3 gap-6 mt-16 relative z-10">
           {stats.map((stat, idx) => (
             <motion.div
               key={idx}
@@ -262,7 +271,7 @@ export function Home() {
               className="relative rounded-3xl overflow-hidden aspect-[4/5] max-w-[400px] mx-auto border border-border-default shadow-2xl"
             >
               <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop"
+                src={im6}
                 alt="Nexamentes team collaboration"
                 className="w-full h-full object-cover"
               />
@@ -379,11 +388,10 @@ export function Home() {
 
           <div className="w-full lg:w-[450px] aspect-video sm:aspect-square rounded-2xl overflow-hidden relative border border-border-default">
             <img
-              src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop"
+              src={im7}
               alt="Artificial Intelligence vector graphics coding"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/95 to-transparent" />
           </div>
         </div>
       </section>
